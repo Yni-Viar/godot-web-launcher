@@ -1,4 +1,4 @@
-## Godot Web launcher.
+## Godot Web installer and launcher.
 
 Since Godot 4.5 removes support for Windows 7-8.x, I created a quick batch file for launching Web editor.
 
