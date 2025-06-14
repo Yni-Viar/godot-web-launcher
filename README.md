@@ -1,0 +1,10 @@
+## Godot Web launcher.
+
+Since Godot 4.5 removes support for Windows 7-8.x, I created a quick batch file for launching Web editor.
+
+If you are on Windows 7-8.x, it's recommended to use [Supermium](https://github.com/win32ss/supermium/releases)
+
+This script will download latest Godot Web Editor, [The demo file with my remove bugfix](https://github.com/Yni-Viar/godot-web-editor-delete-workaround),
+7-zip (if user specifies), Python 3.8 (if user specifies - the last version, that supports Windows 7) and install into %APPDATA%\GodotWebEditor folder
+
+⚠️ Currently, this batch script is useless, because the next Godot version did not even release.
