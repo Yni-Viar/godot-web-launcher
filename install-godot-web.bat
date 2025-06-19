@@ -5,7 +5,13 @@ cd /D C:/
 set install_python=n
 set install_7zip=n
 
+3<path.txt (
+set /p path= <&3
+set /p folder_name= <&3
+)
 
+@echo "/!\ Ensure the URL is correct and official: " %path%
+pause
 set /p install_python= Install Python? (necessary, if not installed) [y/n]
 if install_python == y (goto :python) else (goto :continue-python)
 
@@ -31,12 +37,12 @@ goto :continue-7zip
 :continue-7zip
 cd %APPDATA%
 mkdir GodotWebLauncher
-bitsadmin.exe /transfer "Downloading launch script" https://raw.githubusercontent.com/godotengine/godot/refs/heads/master/platform/web/serve.py %APPDATA%\GodotWebLauncher\serve.py
-bitsadmin.exe /transfer "Downloading Godot Web Editor" https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_web_editor.zip %APPDATA%\GodotWebLauncher\godot.zip
-bitsadmin.exe /transfer "Downloading Godot Web Editor" https://github.com/Yni-Viar/godot-web-editor-delete-workaround/archive/refs/heads/main.zip %APPDATA%\GodotWebLauncher\demo.zip
+bitsadmin.exe /transfer "Downloading launch script" https://raw.githubusercontent.com/godotengine/godot/refs/heads/master/platform/web/serve.py %APPDATA%\GodotWebLauncher\Editor\serve.py
+bitsadmin.exe /transfer "Downloading Godot Web Editor" https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_web_editor.zip %APPDATA%\GodotWebLauncher\Editor\godot.zip
+bitsadmin.exe /transfer "Downloading Godot Web Editor" https://github.com/Yni-Viar/godot-web-editor-delete-workaround/archive/refs/heads/main.zip %APPDATA%\GodotWebLauncher\Editor\demo.zip
 cd C:\Program Files\7-Zip
-7z.exe e %APPDATA%\GodotWebLauncher\godot.zip -o%APPDATA%\GodotWebLauncher
-cd %APPDATA%\GodotWebLauncher
+7z.exe e %APPDATA%\GodotWebLauncher\Editor\godot.zip -o%APPDATA%\GodotWebLauncher\Editor
+cd %APPDATA%\GodotWebLauncher\Editor
 del godot.zip
 echo "Install finished."
 cd %USERPROFILE%
