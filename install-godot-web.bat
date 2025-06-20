@@ -5,13 +5,6 @@ cd /D C:/
 set install_python=n
 set install_7zip=n
 
-3<path.txt (
-set /p path= <&3
-set /p folder_name= <&3
-)
-
-@echo "/!\ Ensure the URL is correct and official: " %path%
-pause
 set /p install_python= Install Python? (necessary, if not installed) [y/n]
 if install_python == y (goto :python) else (goto :continue-python)
 
