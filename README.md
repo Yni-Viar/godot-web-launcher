@@ -5,6 +5,8 @@ Since Godot 4.5 removes support for Windows 7-8.x, I "ported" Web editor, using 
 ## Building
 
 Run build-godot-web.bat to quickly build the app and launch.
+If a CMD window pops out AND is waiting for your command - close it.
+Type 'N' if the main CMD if it want you to quit - some tasks should be done in separate windows.
 
 ## License
 build-godot-web.bat is licensed under CC0.
