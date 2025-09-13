@@ -17,6 +17,8 @@ function createWindow () {
       sandbox: false
     }
   })
+
+  win.removeMenu();
   
   win.loadURL('http://localhost:3000/godot.editor.html');
   //win.loadFile('godot.editor.html')

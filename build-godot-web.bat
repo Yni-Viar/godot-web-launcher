@@ -27,8 +27,12 @@ pause
 goto :continue-7zip
 
 :continue-7zip
+if exist %TEMP%\godot.zip (goto :skip-godot)
 bitsadmin.exe /transfer "Downloading Godot Web Editor" https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_web_editor.zip %TEMP%\godot.zip
+:skip-godot
+if exist %~dp0\app\demo.zip (goto :skip-demo)
 bitsadmin.exe /transfer "Downloading Godot Web Editor Demo" https://github.com/Yni-Viar/godot-web-editor-delete-workaround/archive/refs/heads/main.zip %~dp0\app\demo.zip
+:skip-demo
 cd /D C:\Program Files\7-Zip
 7z.exe e %TEMP%\godot.zip -o%~dp0\app
 cd /D %~dp0
