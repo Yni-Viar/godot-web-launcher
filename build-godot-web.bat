@@ -27,17 +27,17 @@ pause
 goto :continue-7zip
 
 :continue-7zip
-if exist %TEMP%\godot.zip (goto :skip-godot)
-bitsadmin.exe /transfer "Downloading Godot Web Editor" https://github.com/godotengine/godot/releases/download/4.4.1-stable/Godot_v4.4.1-stable_web_editor.zip %TEMP%\godot.zip
+if exist %TEMP%\godot_4_5.zip (goto :skip-godot)
+bitsadmin.exe /transfer "Downloading Godot Web Editor" https://github.com/godotengine/godot/releases/download/4.5-stable/Godot_v4.5-stable_web_editor.zip %TEMP%\godot_4_5.zip
 :skip-godot
 if exist %~dp0\app\demo.zip (goto :skip-demo)
 bitsadmin.exe /transfer "Downloading Godot Web Editor Demo" https://github.com/Yni-Viar/godot-web-editor-delete-workaround/archive/refs/heads/main.zip %~dp0\app\demo.zip
 :skip-demo
 cd /D C:\Program Files\7-Zip
-7z.exe e %TEMP%\godot.zip -o%~dp0\app
+7z.exe e %TEMP%\godot_4_5.zip -o%~dp0\app
 cd /D %~dp0
 start /w cmd /k npm install
-start /w cmd /k npx electron-forge import
+REM start /w cmd /k npx electron-forge import
 start /w cmd /k npm run make
 echo "Build finished."
 
