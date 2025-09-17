@@ -1,4 +1,6 @@
-# Godot Web installer and launcher.
+# Godot Web for Windows 7/8.1.
+
+![Screenshot on Windows 8.1 machine](./doc/g4w7_scr.png)
 
 Since Godot 4.5 removes support for Windows 7-8.x, I "ported" Web editor, using Electron (since v.2.0, 1.0 is UNSAFE!!!).
 
